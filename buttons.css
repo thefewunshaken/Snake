@@ -1,0 +1,178 @@
+@import url('https://fonts.googleapis.com/css?family=Russo+One');
+
+.buttons {
+  position: relative;
+  display: flex;
+}
+
+
+/* d-PAD ************************/
+.dPad {
+  position: relative;
+  /* filter: drop-shadow(3px 2px 1px #555); */
+  left: 50px;
+  top: 60px;
+}
+
+.center {
+  z-index: 2;
+  top: 3em;
+}
+
+.center-circle {
+  position: static;
+/*   background: #222532; */
+  background: #334;
+/*   background: #90E4FF; */
+/*   background: #7FFFB5; */
+  border-radius: 100%;
+  margin: auto;
+  width: 75%;
+  height: 75%;
+  z-index: 3;
+}
+
+.up,
+.right,
+.down,
+.left,
+.center {
+  padding: 0;
+  margin: 0;
+  width: 3em;
+  height: 3em;
+  position: absolute;
+  display: flex;
+  background: #0C0F1B;
+  padding: 12px;
+  border: 1px solid #334;
+/*   background: #51D6FF; */
+/*   background: #37FF8B; */
+}
+
+.right {
+  top: 3em;
+  left: 3em;
+}
+
+.left {
+  top: 3em;
+  right: 0em;
+}
+
+.down {
+  top: 6em;
+}
+
+.up-triangle {
+  position: absolute;
+  bottom: 16px;
+  right: 8px;
+  margin: auto;
+/*   background: yellow; */
+  width: 65%;
+  height: 65%;
+  border-left: solid 15px transparent; 
+  border-right: solid 15px transparent; 
+  border-bottom: solid 20px #334; 
+}
+
+.right-triangle {
+  position: absolute;
+  bottom: 8px;
+  right: 0px;
+  margin: auto;
+/*   background: yellow; */
+  width: 65%;
+  height: 65%;
+  border-left: solid 15px transparent; 
+  border-right: solid 15px transparent; 
+  border-bottom: solid 20px #334;
+  transform: rotate(90deg);
+}
+
+.down-triangle {
+  position: absolute;
+  bottom: 0px;
+  right: 8px;
+  margin: auto;
+/*   background: yellow; */
+  width: 65%;
+  height: 65%;
+  border-left: solid 15px transparent; 
+  border-right: solid 15px transparent; 
+  border-bottom: solid 20px #334;
+  transform: rotate(180deg);
+}
+
+.left-triangle {
+  position: absolute;
+  bottom: 8px;
+  left: 1px;
+  margin: auto;
+/*   background: yellow; */
+  width: 65%;
+  height: 65%;
+  border-left: solid 15px transparent; 
+  border-right: solid 15px transparent; 
+  border-bottom: solid 20px #334;
+  transform: rotate(-90deg);
+}
+
+ /* end of d-PAD ************************/
+
+ /* start/stop ************************/
+
+ .startStop {
+   display: flex;
+   font-family: 'Russo One', sans-serif;
+   text-align: center;
+   color: #222C7B;
+   font-size: 1.1em;
+   letter-spacing: 1px;
+ }
+
+ .startStop > div {
+   position: relative;
+   margin-right: 15px;
+   top: 250px;
+   left: 150px;
+   transform: rotate(-25deg);
+ }
+
+ .start, .stop {
+   width: 5em;
+   height: 1.1em;
+   background: #6B6C74;
+   border: none;
+   border-radius: 100em;
+ }
+
+ /* end of startStop ************************/
+
+ .abBtns {
+  display: flex;
+  position: relative;
+  top: 100px;
+  left: 155px;
+  transform: rotate(-25deg);
+  font-family: 'Russo One', sans-serif;
+  text-align: center;
+  color: #222C7B;
+  /* background: black; */
+  font-size: 1.5em;
+  letter-spacing: 1px;
+ }
+
+ .abBtns > div:nth-child(1) {
+   /* margin: auto; */
+  margin-right: 25px;
+ }
+
+ .abBtns button {
+  width: 4.8em;
+  height: 4.8em;
+  background: #7C0A45;
+  border: none;
+  border-radius: 100%;
+ }

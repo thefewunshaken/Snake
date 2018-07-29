@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+
+/* broswer reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* css variables */
+  --canvas-bg-color: #465814;
+  --gameFrame-color: #C0BEBA;
+}
+
+body {
+  background: #000;
+}
+
+.wrapper {
+  display: flex;
+  height: 100vh;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+.wrapper > * {
+  margin: 10px;
+}
+
+.gameBoyFrame {
+  height: 92vh;
+  /* width: 50vw; */
+  background: var(--gameFrame-color);
+  border: 35px solid var(--gameFrame-color);
+  border-top: 50px solid var(--gameFrame-color);
+  border-radius: 15px;
+  border-bottom-right-radius: 100px;
+}
+
+.subFrame {
+  position: relative;
+  background: #555865;
+  padding: 40px 80px;
+  border-radius: 15px;
+  border-bottom-right-radius: 75px;
+}
+
+.gameData {
+  position: absolute;
+  top: 43px;
+  right: 83px;
+  /* text-align: right; */
+  color: black;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 5px;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 80px;
+  width: 60%;
+  padding: 0 15px;
+  line-height: 1.6em;
+}
+
+.message > h2, h4 {
+  text-align: center;
+}
+
+.message > h2 {
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.message > h4 {
+  margin-top: 25px;
+  letter-spacing: 1px;
+}
+
+.message > div {
+  position: relative;
+  left: 20px;
+}
+
+#canvas {
+  background: var(--canvas-bg-color);
+  box-sizing: content-box;
+  border: 2px solid #111111;
+  border-radius: 4px;
+}
