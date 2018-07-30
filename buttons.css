@@ -10,8 +10,8 @@
 .dPad {
   position: relative;
   /* filter: drop-shadow(3px 2px 1px #555); */
-  left: 50px;
-  top: 60px;
+  left: 3.2em;
+  top: 4em;
 }
 
 .center {
@@ -44,8 +44,8 @@
   position: absolute;
   display: flex;
   background: #0C0F1B;
-  padding: 12px;
-  border: 1px solid #334;
+  padding: 1em;
+  border: 0.05em solid #334;
 /*   background: #51D6FF; */
 /*   background: #37FF8B; */
 }
@@ -66,56 +66,56 @@
 
 .up-triangle {
   position: absolute;
-  bottom: 16px;
-  right: 8px;
+  bottom: 0.8em;
+  right: 0.45em;
   margin: auto;
 /*   background: yellow; */
   width: 65%;
   height: 65%;
-  border-left: solid 15px transparent; 
-  border-right: solid 15px transparent; 
-  border-bottom: solid 20px #334; 
+  border-left: solid 1em transparent; 
+  border-right: solid 1em transparent; 
+  border-bottom: solid 1.6em #334; 
 }
 
 .right-triangle {
   position: absolute;
-  bottom: 8px;
-  right: 0px;
+  bottom: 0.45em;
+  right: 0.2em;
   margin: auto;
 /*   background: yellow; */
   width: 65%;
   height: 65%;
-  border-left: solid 15px transparent; 
-  border-right: solid 15px transparent; 
-  border-bottom: solid 20px #334;
+  border-left: solid 1em transparent; 
+  border-right: solid 1em transparent; 
+  border-bottom: solid 1.6em #334;
   transform: rotate(90deg);
 }
 
 .down-triangle {
   position: absolute;
-  bottom: 0px;
-  right: 8px;
+  bottom: 0.2em;
+  right: 0.45em;
   margin: auto;
 /*   background: yellow; */
   width: 65%;
   height: 65%;
-  border-left: solid 15px transparent; 
-  border-right: solid 15px transparent; 
-  border-bottom: solid 20px #334;
+  border-left: solid 1em transparent; 
+  border-right: solid 1em transparent; 
+  border-bottom: solid 1.6em #334;
   transform: rotate(180deg);
 }
 
 .left-triangle {
   position: absolute;
-  bottom: 8px;
-  left: 1px;
+  bottom: 0.45em;
+  left: 0.2em;
   margin: auto;
 /*   background: yellow; */
   width: 65%;
   height: 65%;
-  border-left: solid 15px transparent; 
-  border-right: solid 15px transparent; 
-  border-bottom: solid 20px #334;
+  border-left: solid 1em transparent; 
+  border-right: solid 1em transparent; 
+  border-bottom: solid 1.6em #334;
   transform: rotate(-90deg);
 }
 
@@ -129,14 +129,14 @@
    text-align: center;
    color: #222C7B;
    font-size: 1.1em;
-   letter-spacing: 1px;
+   letter-spacing: 0.1em;
  }
 
  .startStop > div {
    position: relative;
-   margin-right: 15px;
-   top: 250px;
-   left: 150px;
+   margin-right: 1em;
+   top: 14.5em;
+   left: 8em;
    transform: rotate(-25deg);
  }
 
@@ -153,20 +153,19 @@
  .abBtns {
   display: flex;
   position: relative;
-  top: 100px;
-  left: 155px;
+  top: 4em;
+  left: 6em;
   transform: rotate(-25deg);
   font-family: 'Russo One', sans-serif;
   text-align: center;
   color: #222C7B;
   /* background: black; */
   font-size: 1.5em;
-  letter-spacing: 1px;
  }
 
  .abBtns > div:nth-child(1) {
    /* margin: auto; */
-  margin-right: 25px;
+  margin-right: 1em;
  }
 
  .abBtns button {

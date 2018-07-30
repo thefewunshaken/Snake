@@ -26,45 +26,46 @@ body {
   font-family: 'Do Hyeon', sans-serif;
 }
 
+/* 
 .wrapper > * {
   margin: 10px;
-}
+} */
 
 .gameBoyFrame {
   height: 92vh;
   /* width: 50vw; */
   background: var(--gameFrame-color);
-  border: 35px solid var(--gameFrame-color);
-  border-top: 50px solid var(--gameFrame-color);
-  border-radius: 15px;
-  border-bottom-right-radius: 100px;
+  border: 2.5em solid var(--gameFrame-color);
+  border-top: 3.5em solid var(--gameFrame-color);
+  border-radius: 1em;
+  border-bottom-right-radius: 7em;
 }
 
 .subFrame {
   position: relative;
   background: #555865;
-  padding: 40px 80px;
-  border-radius: 15px;
-  border-bottom-right-radius: 75px;
+  padding: 2.3em 5em;
+  border-radius: 1em;
+  border-bottom-right-radius: 5.5em;
 }
 
 .gameData {
   position: absolute;
-  top: 43px;
-  right: 83px;
+  top: 2.5em;
+  right: 5.1em;
   /* text-align: right; */
   color: black;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.4em;
 }
 
 .message {
   display: flex;
   flex-direction: column;
   position: absolute;
-  bottom: 80px;
-  width: 60%;
-  padding: 0 15px;
+  bottom: 4.8em;
+  width: 66%;
+  padding: 0 1em;
   line-height: 1.6em;
 }
 
@@ -73,23 +74,23 @@ body {
 }
 
 .message > h2 {
-  margin-bottom: 10px;
-  letter-spacing: 2px;
+  margin-bottom: 0.4em;
+  letter-spacing: 0.1em;
 }
 
 .message > h4 {
-  margin-top: 25px;
-  letter-spacing: 1px;
+  margin-top: 1.2em;
+  letter-spacing: 0.08em;
 }
 
 .message > div {
   position: relative;
-  left: 20px;
+  left: 1.4em;
 }
 
 #canvas {
   background: var(--canvas-bg-color);
   box-sizing: content-box;
-  border: 2px solid #111111;
-  border-radius: 4px;
+  border: 0.1em solid #111111;
+  border-radius: 0.2em;
 }
