@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Russo+One');
 
+:root {
+  /* css variables */
+  --triangleColor: #444;
+}
+
 .buttons {
   position: relative;
   display: flex;
 }
 
 
-/* d-PAD ************************/
+
+/* d-PAD *************************************************************/
 .dPad {
   position: relative;
-  /* filter: drop-shadow(3px 2px 1px #555); */
+  filter: drop-shadow(3px 2px 2px #555);
   left: 3.2em;
   top: 4em;
 }
@@ -22,32 +28,64 @@
 .center-circle {
   position: static;
 /*   background: #222532; */
-  background: #334;
+  background: var(--triangleColor);
 /*   background: #90E4FF; */
 /*   background: #7FFFB5; */
   border-radius: 100%;
   margin: auto;
-  width: 75%;
-  height: 75%;
+  width: 100%;
+  height: 100%;
   z-index: 3;
 }
 
-.up,
-.right,
-.down,
-.left,
-.center {
+.direction, .center {
   padding: 0;
   margin: 0;
   width: 3em;
   height: 3em;
   position: absolute;
   display: flex;
-  background: #0C0F1B;
+  /* background-image: linear-gradient(to top, #222, #000); */
+  background-image: linear-gradient(to top, #333, #111);
+  background-color: #0C0F1B;
   padding: 1em;
-  border: 0.05em solid #334;
-/*   background: #51D6FF; */
-/*   background: #37FF8B; */
+  border: 0.01em solid #333;
+}
+
+.up:hover, .up:active, .activated {
+  /* inset verticalPos, horizPos, blur, spread */
+  transform: translate(0, 0.2em) skewX(-1deg);
+  box-shadow: inset -2px 3px 6px 0 #222,inset 2px 11px 25px 0 #000;
+  -moz-box-shadow: inset -2px 3px 6px 0 #222,inset 2px 11px 25px 0 #000;
+  -webkit-box-shadow: inset -2px 3px 6px 0 #222,inset 2px 11px 25px 0 #000;
+  background-color: #000000;
+}
+
+.right:hover, .right:active, .activated {
+  /* inset verticalPos, horizPos, blur, spread */
+  transform: translate(-0.2em, 0) skewX(1deg);
+  box-shadow: inset -3px 2px 6px 0 #222,inset -11px 2px 25px 0 #000;
+  -moz-box-shadow: inset -3px 2px 6px 0 #222,inset -11px 2px 25px 0 #000;
+  -webkit-box-shadow: inset -3px 2px 6px 0 #222,inset -11px 2px 25px 0 #000;
+  background-color: #000000;
+}
+
+.down:hover, .down:active, .activated {
+  /* inset verticalPos, horizPos, blur, spread */
+  transform: translate(0, -0.2em) skewY(1deg);
+  box-shadow: inset 2px -3px 6px 0 #222,inset 2px -11px 25px 0 #000;
+  -moz-box-shadow: inset 2px -3px 6px 0 #222,inset 2px -11px 25px 0 #000;
+  -webkit-box-shadow: inset 2px -3px 6px 0 #222,inset 2px -11px 25px 0 #000;
+  background-color: #000000;
+}
+
+.left:hover, .left:active, .activated {
+  /* inset verticalPos, horizPos, blur, spread */
+  transform: translate(0.2em, 0) skewX(1deg);
+  box-shadow: inset 3px 2px 6px 0 #222,inset 11px 2px 25px 0 #000;
+  -moz-box-shadow: inset 3px 2px 6px 0 #222,inset 11px 2px 25px 0 #000;
+  -webkit-box-shadow: inset 3px 2px 6px 0 #222,inset 11px 2px 25px 0 #000;
+  background-color: #000000;
 }
 
 .right {
@@ -74,7 +112,7 @@
   height: 65%;
   border-left: solid 1em transparent; 
   border-right: solid 1em transparent; 
-  border-bottom: solid 1.6em #334; 
+  border-bottom: solid 1.6em var(--triangleColor); 
 }
 
 .right-triangle {
@@ -87,7 +125,7 @@
   height: 65%;
   border-left: solid 1em transparent; 
   border-right: solid 1em transparent; 
-  border-bottom: solid 1.6em #334;
+  border-bottom: solid 1.6em var(--triangleColor);
   transform: rotate(90deg);
 }
 
@@ -101,7 +139,7 @@
   height: 65%;
   border-left: solid 1em transparent; 
   border-right: solid 1em transparent; 
-  border-bottom: solid 1.6em #334;
+  border-bottom: solid 1.6em var(--triangleColor);
   transform: rotate(180deg);
 }
 
@@ -115,13 +153,16 @@
   height: 65%;
   border-left: solid 1em transparent; 
   border-right: solid 1em transparent; 
-  border-bottom: solid 1.6em #334;
+  border-bottom: solid 1.6em var(--triangleColor);
   transform: rotate(-90deg);
 }
 
- /* end of d-PAD ************************/
+ /* end of d-PAD *****************************************************/
 
- /* start/stop ************************/
+
+
+
+ /* start/stop ******************************************************/
 
  .startStop {
    display: flex;
@@ -149,6 +190,8 @@
  }
 
  /* end of startStop ************************/
+
+
 
  .abBtns {
   display: flex;
