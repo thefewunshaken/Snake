@@ -32,7 +32,7 @@ body {
 } */
 
 .gameBoyFrame {
-  height: 92vh;
+  height: 53em;
   /* width: 50vw; */
   background: var(--gameFrame-color);
   border: 2.5em solid var(--gameFrame-color);
