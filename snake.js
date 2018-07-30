@@ -3,10 +3,7 @@ const highScore = document.querySelector('.highScore');
 const message = document.querySelector('.message');
 const start = document.querySelector('.start');
 const stop = document.querySelector('.stop');
-const up = document.querySelector('.up');
-const right = document.querySelector('.right');
-const down = document.querySelector('.down');
-const left = document.querySelector('.left');
+const dPad = document.querySelector('.dPad');
 const canvas = document.querySelector('canvas');
 const ctx = canvas.getContext('2d');
 canvas.height = 300;
@@ -95,7 +92,7 @@ function snake() {
 	}
 		
 		this.update = () => {
-			this.checkCollision(this.snakeBody);
+			// this.checkCollision(this.snakeBody);
 			let tail;
 		
 			if(newFood.hasSnakeCollided() ) {
@@ -122,6 +119,7 @@ function snake() {
 					newFood.draw(xyRand(), xyRand());
 				}
 			} else {
+					this.checkCollision(this.snakeBody);
 					tail = this.snakeBody.pop();
 					tail.x = this.snakeBody[0].x;
 					tail.y = this.snakeBody[0].y;
@@ -169,18 +167,15 @@ const init = () => {
 		newFood.draw(xyRand(), xyRand());
 	}
 	
-	// console.log(firstSnake.snakeBody);
 	gameRunning = true;
 	console.log('game has been initialized.');
 }
 
 const animate = () => {
 	clearCanvas();
-	window.addEventListener("keydown", directionHandler);
-	up.addEventListener("click", directionHandler);
-	right.addEventListener("click", directionHandler);
-	down.addEventListener("click", directionHandler);
-	left.addEventListener("click", directionHandler);
+	// window.addEventListener("keydown", directionHandler);
+	// dPad.addEventListener("click", directionHandler);
+
 	switch(direction) {
 		case 'left':
 		firstSnake.snakeBody[0].x-=10;
@@ -223,11 +218,11 @@ const startGame = () => {
 		}
 		
 		init();
-		console.log(`Game running ${gameRunning}`);
 		// momentary pause before game starts
 		setTimeout(() => {
+			window.addEventListener("keydown", directionHandler);
+			dPad.addEventListener("click", directionHandler);
 			looper = setInterval(animate, speed);
-			console.log("Game has started");
 			console.log(`Game running ${gameRunning}`);
 		},200);
 
@@ -247,10 +242,7 @@ const pauseGame = () => {
 	if(gameRunning) {
 		clearInterval(looper);
 		window.removeEventListener("keydown", directionHandler);
-		up.removeEventListener("click", directionHandler);
-		right.removeEventListener("click", directionHandler);
-		down.removeEventListener("click", directionHandler);
-		left.removeEventListener("click", directionHandler);
+		dPad.removeEventListener("click", directionHandler);
 		message.textContent = 'paused';
 		console.log("Paused");
 		gameRunning = false;
@@ -270,6 +262,7 @@ const stopGame = () => {
 		clearCanvas();
 		gameRunning = false;
 		window.removeEventListener("keydown", directionHandler);
+		dPad.removeEventListener("click", directionHandler);
 		console.log(`Game running ${gameRunning}`);
 		scoreCheck();
 	}
@@ -302,6 +295,7 @@ const clearCanvas = () => {
 }
 
 const directionHandler = event => {
+
 	switch(event.which){
 		case 40:
 		case 83:
@@ -329,23 +323,27 @@ const directionHandler = event => {
 		break;
 	}
 
-	switch(event.currentTarget) {
-		case up:
+	switch(event.target) {
+		case dPad.children[1]:
+		case dPad.children[1].children[0]:
 			if(direction !== 'down') {
 				direction = 'up';
 			}
 		break;
-		case right:
+		case dPad.children[2]:
+		case dPad.children[2].children[0]:
 			if(direction !== 'left') {
 					direction = 'right';
 				}
 		break;
-		case down:
+		case dPad.children[3]:
+		case dPad.children[3].children[0]:
 			if(direction !== 'up') {
 					direction = 'down';
 				}
 		break;
-		case left:
+		case dPad.children[4]:
+		case dPad.children[4].children[0]:
 			if(direction !== 'right') {
 					direction = 'left';
 				}

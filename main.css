@@ -11,10 +11,11 @@
   /* css variables */
   --canvas-bg-color: #465814;
   --gameFrame-color: #C0BEBA;
+  --gameFrame-gradient: linear-gradient(to bottom, #C0BEBA, rgb(129, 128, 125));
 }
 
 body {
-  background: #000;
+  /* background: #000; */
 }
 
 .wrapper {
@@ -34,9 +35,9 @@ body {
 .gameBoyFrame {
   height: 53em;
   /* width: 50vw; */
-  background: var(--gameFrame-color);
-  border: 2.5em solid var(--gameFrame-color);
-  border-top: 3.5em solid var(--gameFrame-color);
+  background: var(--gameFrame-gradient);
+  padding: 2.5em;
+  padding-top: 3.5em;
   border-radius: 1em;
   border-bottom-right-radius: 7em;
 }
