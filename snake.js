@@ -220,9 +220,9 @@ const startGame = () => {
 		init();
 		// momentary pause before game starts
 		setTimeout(() => {
+			looper = setInterval(animate, speed);
 			window.addEventListener("keydown", directionHandler);
 			dPad.addEventListener("click", directionHandler);
-			looper = setInterval(animate, speed);
 			console.log(`Game running ${gameRunning}`);
 		},200);
 
@@ -233,6 +233,8 @@ const startGame = () => {
 
 const continueGame = () => {
 	looper = setInterval(animate, speed);
+	window.addEventListener("keydown", directionHandler);
+	dPad.addEventListener("click", directionHandler);
 	message.textContent = '';
 	gameRunning = true;
 	console.log("Continued");
