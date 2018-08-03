@@ -103,6 +103,25 @@ body {
 
 @media (max-width: 500px) {
   .gameBoyFrame {
-    transform: scale(0.7);
+    transform: scale(0.6);
+  }
+
+  .buttons {
+    top: -2em;
+  }
+
+  @media (max-height: 815px) {
+    .gameBoyFrame {
+      height: 60em;
+    }
+  }
+
+  @media (max-height: 600px) {
+    .gameBoyFrame {
+      transform: scale(0.5);
+    }
+    .gameBoyFrame {
+      height: 50em;
+    }
   }
 }
