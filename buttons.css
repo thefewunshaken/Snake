@@ -10,7 +10,19 @@
   display: flex;
 }
 
+/* removes default blue box highlight on button click */
+button:active,
+button:focus,
+button.activated {
+  background-image: none;
+  outline: 0;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
 
+.direction, .stop, .start, .abBtns button {
+  cursor: pointer;
+}
 
 /* d-PAD *************************************************************/
 .dPad {
@@ -52,7 +64,7 @@
   border: 0.01em solid #333;
 }
 
-.up:hover, .up:active, .activated {
+.up:active, .activated {
   /* inset verticalPos, horizPos, blur, spread */
   transform: translate(0, 0.2em) skewX(-1deg);
   box-shadow: inset -2px 3px 6px 0 #222,inset 2px 11px 25px 0 #000;
@@ -61,7 +73,7 @@
   background-color: #000000;
 }
 
-.right:hover, .right:active, .activated {
+.right:active, .activated {
   /* inset verticalPos, horizPos, blur, spread */
   transform: translate(-0.2em, 0) skewX(1deg);
   box-shadow: inset -3px 2px 6px 0 #222,inset -11px 2px 25px 0 #000;
@@ -70,7 +82,7 @@
   background-color: #000000;
 }
 
-.down:hover, .down:active, .activated {
+.down:active, .activated {
   /* inset verticalPos, horizPos, blur, spread */
   transform: translate(0, -0.2em) skewY(1deg);
   box-shadow: inset 2px -3px 6px 0 #222,inset 2px -11px 25px 0 #000;
@@ -79,7 +91,7 @@
   background-color: #000000;
 }
 
-.left:hover, .left:active, .activated {
+.left:active, .activated {
   /* inset verticalPos, horizPos, blur, spread */
   transform: translate(0.2em, 0) skewX(1deg);
   box-shadow: inset 3px 2px 6px 0 #222,inset 11px 2px 25px 0 #000;
