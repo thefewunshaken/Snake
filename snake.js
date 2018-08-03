@@ -222,6 +222,7 @@ const startGame = () => {
 		setTimeout(() => {
 			looper = setInterval(animate, speed);
 			window.addEventListener("keydown", directionHandler);
+			window.addEventListener("keyup", directionHandler);
 			dPad.addEventListener("click", directionHandler);
 			console.log(`Game running ${gameRunning}`);
 		},200);
@@ -298,58 +299,107 @@ const clearCanvas = () => {
 
 const directionHandler = event => {
 
-	switch(event.which){
-		case 40:
-		case 83:
-			if(direction !== 'up') {
-				direction = 'down';
-			}
-		break;
-		case 39:
-		case 68:
-			if(direction !== 'left') {
-				direction = 'right';
-			}
-		break;
-		case 38:
-		case 87:
-		if(direction !== 'down') {
-			direction = 'up';
-		}
-		break;
-		case 37:
-		case 65:
-			if(direction !== 'right') {
-				direction = 'left';
-			}
-		break;
-	}
-
-	switch(event.target) {
-		case dPad.children[1]:
-		case dPad.children[1].children[0]:
+	if(event.type === "keydown") {
+		switch(event.which){
+			case 38:
+			case 87:
 			if(direction !== 'down') {
 				direction = 'up';
 			}
-		break;
-		case dPad.children[2]:
-		case dPad.children[2].children[0]:
+			break;
+			case 39:
+			case 68:
 			if(direction !== 'left') {
-					direction = 'right';
-				}
-		break;
-		case dPad.children[3]:
-		case dPad.children[3].children[0]:
-			if(direction !== 'up') {
+				direction = 'right';
+			}
+			break;
+			case 40:
+			case 83:
+				if(direction !== 'up') {
 					direction = 'down';
 				}
-		break;
-		case dPad.children[4]:
-		case dPad.children[4].children[0]:
-			if(direction !== 'right') {
+			break;
+			case 37:
+			case 65:
+				if(direction !== 'right') {
 					direction = 'left';
 				}
-		break;
+			break;
+		}
+	}
+
+	if(event.type === "click") {
+		switch(event.target) {
+			case dPad.children[1]:
+			case dPad.children[1].children[0]:
+				if(direction !== 'down') {
+					direction = 'up';
+				}
+			break;
+			case dPad.children[2]:
+			case dPad.children[2].children[0]:
+				if(direction !== 'left') {
+						direction = 'right';
+					}
+			break;
+			case dPad.children[3]:
+			case dPad.children[3].children[0]:
+				if(direction !== 'up') {
+						direction = 'down';
+					}
+			break;
+			case dPad.children[4]:
+			case dPad.children[4].children[0]:
+				if(direction !== 'right') {
+						direction = 'left';
+					}
+			break;
+		}
+	}
+
+	pushButtons(event);
+
+}
+
+const pushButtons = event => {
+	if(event.type === "keydown") {
+		for (let i = 0; i < dPad.children.length; i++) {
+			let dir = dPad.children[i];
+
+			switch(dir.classList[0]) {
+				case "up":
+				if(direction === "up") {
+					dir.classList.add('activated');
+					return;
+				}
+				break;
+				case "right":
+					if(direction === "right") {
+						dir.classList.add('activated');
+						return;
+					}
+				break;
+				case "down":
+				if(direction === "down") {
+					dir.classList.add('activated');
+					return;
+				}
+				break;
+				case "left":
+				if(direction === "left") {
+					dir.classList.add('activated');
+					return;
+				}
+				break;
+			}
+		}
+	}
+
+	if(event.type === "keyup") {
+		for (let i = 0; i < dPad.children.length; i++) {
+			const dir = dPad.children[i];
+			dir.classList.remove('activated');
+		}
 	}
 }
 
