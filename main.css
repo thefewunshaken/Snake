@@ -139,6 +139,7 @@ body {
   .buttons {
     top: -2em;
   }
+}
 
 @media (max-width: 400px) {
 
@@ -153,3 +154,4 @@ body {
   .buttons {
     top: -2em;
   }
+}
