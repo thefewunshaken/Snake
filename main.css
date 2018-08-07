@@ -95,33 +95,61 @@ body {
 
 
 /* media queries */
-@media (max-width: 800px) {
+@media (min-width: 2000px) {
+  body {
+    font-size: 15px;
+  }
   .gameBoyFrame {
-    transform: scale(0.9);
+    transform: scale(1.7);
+    height: 50vh;
   }
 }
 
-@media (max-width: 500px) {
-  .gameBoyFrame {
-    transform: scale(0.6);
+@media (max-width: 1200px) {
+  
+  body {
+    font-size: 12px;
   }
 
   .buttons {
     top: -2em;
   }
+}
 
-  @media (max-height: 815px) {
-    .gameBoyFrame {
-      height: 60em;
-    }
+@media (max-width: 780px) {
+  body {
+    font-size: 13px;
   }
 
-  @media (max-height: 600px) {
-    .gameBoyFrame {
-      transform: scale(0.5);
-    }
-    .gameBoyFrame {
-      height: 50em;
-    }
+  .buttons {
+    top: -3em;
   }
 }
+
+@media (max-width: 500px) {
+
+  body {
+    font-size: 13px;
+  }
+
+  .gameBoyFrame {
+    transform: scale(0.8);
+    height: 98vh;
+  }
+  .buttons {
+    top: -2em;
+  }
+
+@media (max-width: 400px) {
+
+  body {
+    font-size: 13px;
+  }
+
+  .gameBoyFrame {
+    transform: scale(0.6);
+    height: 98vh;
+  }
+  .buttons {
+    top: -2em;
+  }
