@@ -8,6 +8,7 @@
 .buttons {
   position: relative;
   display: flex;
+  bottom: 1.5em;
 }
 
 /* removes default blue box highlight on button click */
@@ -16,8 +17,7 @@ button:focus,
 button.activated {
   background-image: none;
   outline: 0;
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
 }
 
 .direction, .stop, .start, .abBtns button {

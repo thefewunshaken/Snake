@@ -29,7 +29,7 @@ body {
 }
 
 .gameBoyFrame {
-  height: 90vh;
+  height: 95vh;
   /* width: 50vw; */
   background: var(--gameFrame-gradient);
   padding: 2.5em;
@@ -95,7 +95,7 @@ body {
 
 
 /* media queries */
-@media (min-width: 2000px) {
+@media (min-height: 1500px) {
   body {
     font-size: 15px;
   }
@@ -105,53 +105,30 @@ body {
   }
 }
 
-@media (max-width: 1200px) {
-  
+@media (min-height: 1080px) {
+  .gameBoyFrame {
+    height: 85vh;
+  }
+}
+
+@media (min-height: 768px) {
   body {
     font-size: 12px;
   }
 
-  .buttons {
-    top: -2em;
-  }
-}
-
-@media (max-width: 780px) {
-  body {
-    font-size: 13px;
-  }
-
-  .buttons {
-    top: -3em;
+  .gameBoyFrame {
+    height: 90vh;
   }
 }
 
 @media (max-width: 500px) {
 
   body {
-    font-size: 13px;
-  }
-
-  .gameBoyFrame {
-    transform: scale(0.8);
-    height: 98vh;
-  }
-  .buttons {
-    top: -2em;
-  }
-}
-
-@media (max-width: 400px) {
-
-  body {
-    font-size: 13px;
+    font-size: 14px;
   }
 
   .gameBoyFrame {
     transform: scale(0.6);
     height: 98vh;
-  }
-  .buttons {
-    top: -2em;
   }
 }
